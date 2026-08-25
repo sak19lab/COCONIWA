@@ -1,0 +1,464 @@
+/* ==========================================================
+   COCONIWA (M企画 ガーデン工房) — base styles
+   ========================================================== */
+
+:root {
+  --color-bg: #FBF8F2;
+  --color-white: #FFFFFF;
+  --color-text: #33301F;
+  --color-text-muted: #5C5A4A;
+  --color-text-faint: #8A876F;
+  --color-border: #EFE9DA;
+  --color-green: #4F6228;
+  --color-green-tint: #EEF1E6;
+  --color-maroon: #800000;
+  --color-maroon-dark: #5C0000;
+  --font-heading: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  --font-body: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  --max-width: 1160px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  margin: 0;
+  color: var(--color-text);
+}
+
+p { margin: 0; }
+
+a { color: var(--color-maroon); text-decoration: none; }
+a:hover { color: var(--color-maroon-dark); }
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 64px);
+}
+
+.container-narrow { max-width: 780px; }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.btn:hover { opacity: 0.88; }
+
+.btn-primary {
+  background: var(--color-maroon);
+  color: #FFF7F0;
+}
+.btn-primary:hover { color: #FFF7F0; }
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--color-maroon);
+  color: var(--color-maroon);
+}
+
+.btn-block { width: 100%; }
+
+/* ---------- header ---------- */
+
+.site-header {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.logo-link { display: flex; }
+.logo-img { height: 38px; width: auto; }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-tel {
+  text-align: right;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+.header-tel:hover { color: var(--color-text); opacity: 0.75; }
+.header-tel-number {
+  display: block;
+  font-weight: 700;
+  font-size: 16px;
+}
+.header-tel-hours {
+  display: block;
+  font-size: 12px;
+  color: var(--color-text-faint);
+}
+
+.icon-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: var(--color-green-tint);
+  color: var(--color-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-btn:hover { color: var(--color-green); opacity: 0.8; }
+
+.header-cta { flex-shrink: 0; }
+
+/* ---------- eyebrow / labels ---------- */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-green);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin: 0 0 20px;
+}
+
+.eyebrow-label {
+  color: var(--color-green);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px;
+}
+
+.section-note {
+  font-size: 14px;
+  color: var(--color-text-faint);
+  margin-top: 12px;
+}
+
+/* ---------- hero ---------- */
+
+.hero { padding: 56px 0 64px; }
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.4;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.hero-lead {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--color-text-muted);
+  max-width: 480px;
+}
+
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero-area-note { font-size: 13px; color: var(--color-text-faint); }
+
+.hero-media {
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(51, 48, 31, 0.14);
+}
+.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- sections ---------- */
+
+.section { padding: 72px 0; }
+.section-white { background: var(--color-white); }
+
+.section-head { text-align: center; margin-bottom: 44px; }
+.section-head h2 { font-size: 28px; }
+
+/* ---------- grids ---------- */
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+
+/* ---------- strength cards ---------- */
+
+.card {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 8px 24px rgba(79, 98, 40, 0.08);
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--color-green-tint);
+  color: var(--color-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card h3 { font-size: 18px; }
+.card p { font-size: 14px; color: var(--color-text-muted); }
+
+/* ---------- works ---------- */
+
+.work-item { margin: 0; }
+.work-item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  width: 100%;
+}
+.work-item figcaption {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 12px;
+}
+
+/* ---------- instagram ---------- */
+
+.center-row { display: flex; justify-content: center; }
+
+/* ---------- service list ---------- */
+
+.dot-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  padding: 7px 0;
+}
+.dot-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--color-green);
+  flex-shrink: 0;
+}
+
+.grid-2 h2 { font-size: 24px; margin-bottom: 20px; }
+
+.area-box {
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--color-green);
+}
+.area-name { font-size: 15px; font-weight: 700; color: var(--color-text); }
+
+/* ---------- company info table ---------- */
+
+.info-table { margin: 0; }
+.info-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+}
+.info-row-last { border-bottom: none; }
+.info-row dt { color: var(--color-text-faint); font-weight: 700; margin: 0; }
+.info-row dd { margin: 0; color: var(--color-text); }
+
+/* ---------- contact ---------- */
+
+.section-contact { background: var(--color-green-tint); }
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+}
+.contact-tel {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--color-maroon);
+  margin-top: 8px;
+}
+.contact-tel:hover { color: var(--color-maroon-dark); }
+
+.contact-form {
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(79, 98, 40, 0.08);
+  margin-top: 12px;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-faint);
+}
+.required-mark {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--color-maroon);
+  color: #FFF7F0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text);
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg);
+  resize: vertical;
+}
+.contact-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235C5A4A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 38px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  outline: 2px solid var(--color-green);
+  outline-offset: 1px;
+}
+.contact-form .btn { margin-top: 4px; }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding: 24px 0;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--color-text-faint);
+  flex-wrap: wrap;
+}
+.footer-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--color-border);
+}
+.footer-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-faint);
+}
+.footer-ig:hover { color: var(--color-green); }
+
+/* ==========================================================
+   Responsive — tablet & mobile
+   ========================================================== */
+
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-media { order: -1; }
+  .hero-lead { max-width: none; }
+
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+
+  .header-tel-hours { display: none; }
+}
+
+@media (max-width: 600px) {
+  .header-actions { gap: 12px; }
+  .header-cta { display: none; }
+  .header-tel-number { font-size: 14px; }
+
+  .hero { padding: 40px 0 48px; }
+  .section { padding: 56px 0; }
+
+  .info-row { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
+
+  .contact-form { padding: 24px 20px; }
+}
